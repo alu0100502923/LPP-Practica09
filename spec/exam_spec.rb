@@ -277,16 +277,16 @@ class Interfaz
 		end
 		
 		context "Interfaz" do
-			it "Debe tener un atributo examen" do
+			it "Tiene atributo examen" do
 				expect(@i).to respond_to :exam
 			end
 			
-			it "Debe inicializarse con una pregunta" do
+			it "Inicializa con una pregunta" do
 				expect {Interfaz.new()}.to raise_error(ArgumentError)
 				expect {Interfaz.new(Nodo.new(@q, nil, nil))}.to raise_error(TypeError)
 			end
 			
-			it "Debe tener un metodo test" do
+			it "Tiene un metodo test" do
 				expect(@i).to respond_to :test
 			end
 		end
