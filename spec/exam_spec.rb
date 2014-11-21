@@ -292,4 +292,3 @@ class Interfaz
 		end
 	end
 end
-
