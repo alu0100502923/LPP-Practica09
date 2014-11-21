@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 require 'examen'
 
 class Interfaz
@@ -11,15 +10,15 @@ class Interfaz
 	def test
 		result = Array.new(@exam.list.count, 0)
 		i = 0
-		acertadas = 0
+		aciertos = 0
 		@exam.list.each do |p|
-			pActual = p.to_s
-			puts (i + 1).to_s + "-) " + pActual
+			ActQuestion = p.to_s
+			puts (i + 1).to_s + "-) " + ActQuestion
 			STDOUT.flush
-			opc = pActual.match(%r{#{gets.chomp}\)\s+(.*)})[1]
+			opc = ActQuestion.match(%r{#{gets.chomp}\)\s+(.*)})[1]
 			result[i] = (p.right.to_s.eql?opc)?1:0
-			acertadas += 1 if (result[i] == 1)
-			puts "> Respuesta #{((result[i] == 1)?"correcta":"incorrecta") + " (" + acertadas.to_s + "/" + result.size.to_s + ")"}\n\n"
+			aciertos += 1 if (result[i] == 1)
+			puts "> Respuesta #{((result[i] == 1)?"Acierto":"Error") + " (" + aciertos.to_s + "/" + result.size.to_s + ")"}\n\n"
 			i += 1
 		end
 		result
