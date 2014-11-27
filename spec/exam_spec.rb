@@ -269,7 +269,6 @@ class TrueFalse
 end
 
 class Interfaz
-
 	describe Interfaz do
 		before :each do
 			@q = Question.new(:text => "2+2=", :right => 4, :distractors => [1, 2, 3])
@@ -288,6 +287,10 @@ class Interfaz
 			
 			it "Tiene un metodo test" do
 				expect(@i).to respond_to :test
+				expect(@i.test([4])).to eq([1])
+				expect(@i.test([3])).to eq([0])
+				@i.exam << @q
+				expect(@i.test([4, 3])).to eq([1, 0])
 			end
 		end
 	end

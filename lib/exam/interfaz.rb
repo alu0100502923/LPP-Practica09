@@ -7,7 +7,17 @@ class Interfaz
 		@exam = Exam.new(question)
 	end
 	
-	def test
+	def test(answer)
+		result = Array.new(@exam.list.count, 0)
+		i = 0
+		@exam.list.each do |p|
+			result[i] = (p.right.to_s.eql?resp[i].to_s)?1:0
+			i += 1
+		end
+		result
+	end
+	
+	def testinteractivo
 		result = Array.new(@exam.list.count, 0)
 		i = 0
 		aciertos = 0
