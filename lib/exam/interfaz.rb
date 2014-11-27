@@ -11,7 +11,7 @@ class Interfaz
 		result = Array.new(@exam.list.count, 0)
 		i = 0
 		@exam.list.each do |p|
-			result[i] = (p.right.to_s.eql?resp[i].to_s)?1:0
+			result[i] = (p.right.to_s.eql?answer[i].to_s)?1:0
 			i += 1
 		end
 		result
