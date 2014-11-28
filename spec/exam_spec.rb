@@ -163,6 +163,24 @@ class Exam
 				@l << p
 				expect(@l.find{|x| x.difficulty == 1}).to eq(@q)
 			end
+			
+			it "Debe existir metodo revers" do
+				expect(@l).to respond_to :revers
+			end
+			
+			it "Debe invertir correctamente la lista" do
+				q1 = Question.new(:text => "2+2=", :right => 4, distractors => [1,5,8], :difficulty => 1)
+				q2 = Question.new(:text => "3+3=", :right => 6, distractors => [1,5,8], :difficulty => 2)				
+				
+				list1 = Lista.new(q1)
+				list1 << q2
+				
+				list2 = Lista.new(q2)
+				list2 << q1
+				
+				expect(list1.revers)==list2
+			end
+			
 		end
 		
 		context "Exam" do

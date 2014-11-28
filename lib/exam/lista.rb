@@ -71,4 +71,19 @@ class Lista
 			aux = aux.next
 		end
 	end
+	
+	def reverse(nodo, &block)
+		return Lista.new(Question.new(:text => "Vacio", :right => "Vacio", :distractors => ["Vacio"])) if (nodo == nil)
+		list = reverse(nodo.next, &block)
+		list << nodo.value if block[nodo.value]
+		list
+	end
+	
+	def revers(&block)
+		block = ->(x) {true} if !block_given?
+		list = reverse(@cabeza, &block)
+		list.pop
+		return nil if list.total == 0
+		list
+	end
 end
