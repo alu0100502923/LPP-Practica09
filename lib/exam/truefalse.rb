@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 require 'question'
-
+# Clase de preguntas de verdadero ó falso.
 class TrueFalse < Question
 	def initialize(args)
 		raise ArgumentError, "Esperada pregunta (:text)" unless args.key?(:text)

@@ -4,7 +4,7 @@ class Question
 	attr_accessor :text, :right, :distractors, :difficulty
 	
 	include Comparable
-	
+	# Instancia de una Pregunta, una respuesta correcta y respuestas incorrectas.
 	def initialize(args)
 		@text = args[:text]
 		raise ArgumentError, "Esperada pregunta (:text)" unless args[:text]
@@ -17,7 +17,7 @@ class Question
 		
 		@difficulty = (args.key?:difficulty)?args[:difficulty]:1
 	end
-	
+	# Definición del Método to_s.
 	def to_s
 		opciones = @distractors + [@right]
 		opciones = opciones.shuffle
@@ -30,11 +30,11 @@ class Question
 		end
 		s
 	end
-	
+	# Sobrecarga del operador <=> (Comparar dificultad entre preguntas)
 	def <=>(p)
 		@difficulty <=> p.difficulty
 	end
-	
+	# Sobrecarga del operador == (Comparar textualmente)
 	def ==(p)
 		@text.eql?p.text
 	end
