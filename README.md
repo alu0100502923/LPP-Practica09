@@ -1,4 +1,4 @@
-## Practica 09:
+## Practica 09 y Practica 10
 
 Joel Perez Ramos
 Juan Antonio Oliva Perez
