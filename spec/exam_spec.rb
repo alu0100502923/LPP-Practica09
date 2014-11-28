@@ -170,12 +170,18 @@ class Exam
 			
 			it "Debe invertir correctamente la lista" do
 				q1 = Question.new(:text => "2+2=", :right => 4, :distractors => [1,5,8], :difficulty => 1)
-				q2 = Question.new(:text => "3+3=", :right => 6, :distractors => [1,5,8], :difficulty => 2)				
+				q2 = Question.new(:text => "3+3=", :right => 6, :distractors => [1,5,8], :difficulty => 1)		
+				q3 = Question.new(:text => "4+4=", :right => 8, :distractors => [1,5,7], :difficulty => 1)
+				q4 = Question.new(:text => "5+5=", :right => 10, :distractors => [1,5,7], :difficulty => 1)
 				
 				list1 = Lista.new(q1)
 				list1 << q2
+				list1 << q3
+				list1 << q4
 				
-				list2 = Lista.new(q2)
+				list2 = Lista.new(q4)
+				list2 << q3
+				list2 << q2
 				list2 << q1
 				
 				expect(list1.revers)==list2
