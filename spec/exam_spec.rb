@@ -169,8 +169,8 @@ class Exam
 			end
 			
 			it "Debe invertir correctamente la lista" do
-				q1 = Question.new(:text => "2+2=", :right => 4, distractors => [1,5,8], :difficulty => 1)
-				q2 = Question.new(:text => "3+3=", :right => 6, distractors => [1,5,8], :difficulty => 2)				
+				q1 = Question.new(:text => "2+2=", :right => 4, :distractors => [1,5,8], :difficulty => 1)
+				q2 = Question.new(:text => "3+3=", :right => 6, :distractors => [1,5,8], :difficulty => 2)				
 				
 				list1 = Lista.new(q1)
 				list1 << q2
