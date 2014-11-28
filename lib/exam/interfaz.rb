@@ -3,11 +3,11 @@ require 'examen'
 #Clase para gestionar la interfaz.
 class Interfaz
 	attr_accessor :exam
-	#Inicializa a partir de una pregunta.
+	# Inicializa a partir de una pregunta.
 	def initialize(question)
 		@exam = Exam.new(question)
 	end
-	#Método que te indica las preguntas correctas(1) y incorrectas(0).
+	# Método que te indica las preguntas correctas(1) y incorrectas(0).
 	def test(answer)
 		result = Array.new(@exam.list.count, 0)
 		i = 0
@@ -17,7 +17,7 @@ class Interfaz
 		end
 		result
 	end
-	#Método para mostrar la interfaz al usuario.
+	# Método para mostrar la interfaz al usuario.
 	def testinteractivo
 		result = Array.new(@exam.list.count, 0)
 		i = 0
