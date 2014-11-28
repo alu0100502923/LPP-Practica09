@@ -1,15 +1,28 @@
-## Practica 09 y Practica 10
+## Práctica 10
 
-Joel Perez Ramos
-Juan Antonio Oliva Perez
+## Descripción del equipo
 
-TODO: Write a gem description
+	* Nombre del equipo: LPP_T_9
+	* Miembros del equipo:
+		* Joel Pérez Ramos
+		* Juan Antonio Oliva Pérez
+
+## Descripción de la Práctica
+	La estructura del repositorio es la siguiente:
+  * [Librerías](lib/)
+    * [Gema Ruby](lib/examen/base.rb)
+    * [Código fuente de la clase Examen](lib/examen/examen.rb)
+    * [Código fuente de la clase Pregunta](lib/examen/question.rb)
+    * [Códido fuente de la clase Pregunta Verdadero y Falso](lib/examen/truefalse.rb)
+  * [RSpec](spec/)
+  * [Fichero Rake con las tareas necesarias definidas](Rakefile)
+  * Fichero readme con esta documentación
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'question-simple_choice'
+    gem 'exam'
 
 And then execute:
 
@@ -17,7 +30,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install question-simple_choice
+    $ gem install exam
 
 ## Usage
 
