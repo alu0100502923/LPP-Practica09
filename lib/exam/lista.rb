@@ -37,14 +37,14 @@ class Lista
 	# Método para insertar preguntas de la lista, sobrecargando el operador <<.
 	def <<(p)
 	  raise TypeError, "Esperada pregunta para inserción" unless p.is_a? (Question)
-+     if (@total == 0)
-+       @cabeza = Nodo.new(p, nil, nil)
-+       @cola = @cabeza
-+     else
-+       @cola.next = Nodo.new(p, nil, @cola)
-+       @cola = @cola.next
-+       @cola.value
-+     end
+     if (@total == 0)
+       @cabeza = Nodo.new(p, nil, nil)
+       @cola = @cabeza
+     else
+       @cola.next = Nodo.new(p, nil, @cola)
+       @cola = @cola.next
+       @cola.value
+     end
       @total += 1
 	end
 	
@@ -52,12 +52,12 @@ class Lista
 	def push_back(*questions)
 		questions.each do |p|
 			if (@total == 0)
-+        		@cabeza = Nodo.new(p, nil, nil)
-+        		@cola = @cabeza
-+      		else
-+        		@cola.next = Nodo.new(p, nil, @cola)
-+        		@cola = @cola.next
-+      		end
+        		@cabeza = Nodo.new(p, nil, nil)
+        		@cola = @cabeza
+      		else
+        		@cola.next = Nodo.new(p, nil, @cola)
+        		@cola = @cola.next
+      		end
 			@total += 1
 		end
 		questions
