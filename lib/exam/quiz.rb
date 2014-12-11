@@ -8,7 +8,7 @@ class Quiz
 	#Metodo de instancia de la clase Quiz
 	def initialize(cabecera,&block)
 		@cabecera = cabecera
-		@exam = Exam.new(Question.new(:text => "Vacio", :right => "Vacio", distractors => ["Vacio"]))
+		@exam = Exam.new(Question.new(:text => "Vacio", :right => "Vacio", :distractors => ["Vacio"]))
 		@exam.list.pop
 		@count = 0
 		instance_eval &block
