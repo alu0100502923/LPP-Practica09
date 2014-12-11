@@ -331,7 +331,7 @@ class Quiz
 				wrong => "muchos",
 				wrong => "los que defina el usuario"
 				
-				question "En Ruby los bloques son objetos que contienen codigo"
+				question "En Ruby los bloques son objetos que contienen codigo",
 				wrong => "Cierto",
 				right => "Falso"
 			end
