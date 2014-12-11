@@ -323,7 +323,7 @@ end
 class Quiz
 	describe Exam do
 		before :each do
-			@q = @Quiz.new("Cuestionario LPP 05/12/2014") do
+			@q = Quiz.new("Cuestionario LPP 05/12/2014") do
 			
 			question "¿Cuantos argumentos de tipo bloque puede recibir un metodo?",
 				right => "1",
