@@ -1,4 +1,4 @@
-# encoding: utf -8
+# encoding: utf-8
 
 require "exam"
 #Clase encargada de gestionar un DSL
