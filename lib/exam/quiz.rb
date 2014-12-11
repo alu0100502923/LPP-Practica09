@@ -3,11 +3,11 @@
 require "exam"
 #Clase encargada de gestionar un DSL
 class Quiz
-	attr_accessor :exam, :count, :name
+	attr_accessor :exam, :count, :cabecera
 	
 	#Metodo de instancia de la clase Quiz
-	def initialize(name,&block)
-		@name = name
+	def initialize(cabecera,&block)
+		@cabecera = cabecera
 		@exam = Exam.new(Question.new(:text => "Vacio", :right => "Vacio", distractors => ["Vacio"]))
 		@exam.list.pop
 		@count = 0
@@ -35,6 +35,6 @@ class Quiz
 	
 	#Metodo to_s
 	def to_s
-		"\s\s#{@name}\n#{'#' * (@name.size + 5)}\n\n#{@exam}"
+		"\s\s#{@cabecera}\n#{'#' * (@cabecera.size + 5)}\n\n#{@exam}"
 	end
 end

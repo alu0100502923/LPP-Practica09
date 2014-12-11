@@ -319,3 +319,61 @@ class Interfaz
 		end
 	end
 end
+
+class Quiz
+	describe Exam do
+		before :each do
+			@q = @Quiz.new("Cuestionario LPP 05/12/2014") do
+			
+			question "¿Cuantos argumentos de tipo bloque puede recibir un metodo?",
+				right => "1",
+				wrong => "2",
+				wrong => "muchos",
+				wrong => "los que defina el usuario"
+				
+				question "En Ruby los bloques son objetos que contienen codigo"
+				wrong => "Cierto",
+				right => "Falso"
+			end
+		end
+	
+		context "Quiz" do
+			it "Contiene un examen, un contador y un titulo" do
+				expect(@q.cabecera)=="Cuestionario LPP 05/12/2014"
+				expect(@q.count)==1
+				expect(@q.exam.instance_of?Exam).to eq(true)
+			end
+		
+			it "Debe mostrarse correctamente el examen" do
+				expect(@q).to respond_to :exam
+			end
+		
+			it "Debe mostrarse correctamente el contador" do
+				expect(@q).to respond_to :count
+			end
+		
+			it "Debe mostrarse correctamente el titulo" do
+				expect(@q).to respond_to :cabecera
+			end
+		
+			it "Debe generar simbolo right" do
+				expect(@q).to respond_to :right
+				expect(@q.right.instance_of?Symbol).to eq(true)
+			end
+		
+			it "Debe generar Array como simbolo" do
+				expect(@q).to respond_to :wrong
+				expect(@q.wrong.instance_of?Array).to eq(true)
+			end
+		
+			it "Debe leer una pregunta" do
+				expect(@q).to respond_to :question
+				expect(@q.question("2+2=", @q.right=> "4", @q.wrong=> "5")).to be_instance_of(Exam)
+			end
+
+			it "Debe mostrarse correctamente" do
+				expect(@q.to_s).to match(/\s\s.+\n#+\n\n.+/)
+			end		
+		end
+	end
+end
