@@ -28,7 +28,7 @@ class Quiz
 	#Añade una nueva pregunta al examen actual
 	def question(*args)
 		distract = Array.new
-		args[1].key.each { |x| distract << args[1][x] if x.class.equal? Array }
+		args[1].keys.each { |x| distract << args[1][x] if x.class.equal? Array }
 		exam << Question.new(:text => args[0], :right => args[1][:right], :distractors => distract)
 		exam
 	end
